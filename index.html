@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Hello World");
+
+        function getComputerChoice() {
+            const options = ["rock", "paper", "scissors"];
+            const random = Math.floor(Math.random() * options.length);
+            return(random, options[random]);
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection.toLowerCase() === computerSelection) {
+                return ("It\'s a tie!");
+            } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
+                return ("You lose! Paper beats Rock");
+            } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+                return ("You win! Rock beats scissors");
+            } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
+                return ("You lose! Scissors beats paper");
+            } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+                return ("You win! Paper beats rock");
+            } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
+                return ("You win! Scissors beats paper");
+            } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
+                return ("You lose! Rock beats scissors");
+            } else {
+                return ("Invalid entry");
+            }
+                
+        }
+    
+        const computerSelection = getComputerChoice();
+
+
+    </script>
+</body>
+</html>
