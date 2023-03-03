@@ -5,77 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
-    <script>
-        console.log("Hello World");
 
-        function getComputerChoice() {
-            const options = ["rock", "paper", "scissors"];
-            const random = Math.floor(Math.random() * options.length);
-            return(random, options[random]);
-        }
+    <div id="result">
+        <button id="btn-rock">Rock</button>
+        <button id="btn-paper">Paper</button>
+        <button id="btn-scissors">Scissors</button>
+    </div>
+    <div id="container"></div>
 
-        function playRound(playerSelection, computerSelection) {
-            if (playerSelection.toLowerCase() === computerSelection) {
-                return ("Tie");
-            } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
-                return ("Lose");
-            } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
-                return ("Win");
-            } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
-                return ("Lose");
-            } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
-                return ("Win");
-            } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
-                return ("Win");
-            } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
-                return ("Lose");
-            } else {
-                return ("Invalid entry");
-            }
-                
-        }
+    <script src="script.js"></script>
     
-        const computerSelection = getComputerChoice();
-
-        let myWins = 0
-        let computerWins = 0
-
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                let playerSelection = prompt("Please choose either rock, paper, or scissors!")
-
-                let result = playRound (playerSelection.toLowerCase(), computerSelection)
-
-                if (result === "Tie") {
-                    myWins = myWins + 0;
-                } else if (result === "Win") {
-                    myWins = myWins + 1;
-                    console.log("Your wins: " + myWins);
-                } else if (result ==="Lose") {
-                    computerWins = computerWins + 1;
-                    console.log("Computer wins: " + computerWins);
-                } else {
-                    console.log("Please input valid option");
-                }   
-            }
-
-            function winOrLoseStatement() {
-            if (myWins > computerWins) {
-                    console.log("You\'ve won!");
-                } else if (computerWins > myWins) {
-                    console.log("You\'ve lost!");
-                } else {
-                    console.log("It\'s a tie!")
-                }
-             }
-
-             return winOrLoseStatement()
-        
-        }
-
-    </script>
 </body>
 </html>
 
